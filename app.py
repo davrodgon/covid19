@@ -4,6 +4,7 @@ from flask_oidc import OpenIDConnect
 from flask_wtf import FlaskForm
 from wtforms import SelectField, TextField
 from datetime import datetime
+from flask_babel import Babel
 
 import sqlite3
 import pandas as pd
@@ -21,6 +22,7 @@ app.config.update({
 })
 oidc = OpenIDConnect(app)
 IMG_FOLDER = '/static/img/'
+babel = Babel(app)
 
 assets = Environment(app)
 assets.url = app.static_url_path
